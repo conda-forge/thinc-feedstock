@@ -1,6 +1,6 @@
 {% set name = "thinc" %}
-{% set version = "6.0.0" %}
-{% set sha256sum = "3f7d85ced0deb286757545552f93d6b81fa88ba2197d59757c2f6fb2a50e3390" %}
+{% set version = "6.1.3" %}
+{% set sha256sum = "63e96326e5eb899eabc20bfc5d9e1c76e7f0df6c03f09f47d1247a197a6835cc" %}
 
 package:
   name: {{ name }}
@@ -10,31 +10,26 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256sum }}
+  patches:
+    - remove-flexmock-test-dep.patch
 
 build:
   number: 0
   script: python setup.py install --single-version-externally-managed --record=record.txt
-  skip: True  # [win32 or linux32]
+  skip: True  # [not x86_64]
   features:
     - vc9   # [win and py27]
-    - vc10  # [win and py34]
-    - vc14  # [win and py>34]
+    - vc14  # [win and py35]
+    - vc14  # [win and py36]
 
 # Numpy supported is >=1.7
 requirements:
   build:
-    - toolchain
-    - msinttypes  # [win and py<35]
+    - toolchain   # [unix]
+    - msinttypes  # [win and py27]
     - python
     - setuptools
     - numpy x.x
-    - murmurhash >=0.26,<0.27
-    - cymem >=1.30,<1.32
-    - preshed >=0.46,<0.47
-    - tqdm >=4.10.0,<5.0.0
-    - cytoolz >=0.8,<0.9
-    - plac >=0.9.6,<1.0.0
-    - six >=1.10.0,<2.0.0
 
   run:
     - python

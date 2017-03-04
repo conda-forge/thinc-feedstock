@@ -1,0 +1,24 @@
+diff --git a/setup.py b/setup.py
+index f68c924..9743a21 100644
+--- a/setup.py
++++ b/setup.py
+@@ -161,7 +161,6 @@ def setup_package():
+                 'cytoolz>=0.8,<0.9',
+                 'plac>=0.9.6,<1.0.0',
+                 'six>=1.10.0,<2.0.0',
+-                'flexmock'
+             ],
+             classifiers=[
+                 'Development Status :: 5 - Production/Stable',
+diff --git a/thinc/neural/tests/unit/test_ops.py b/thinc/neural/tests/unit/test_ops.py
+index 0e3d1d8..8173340 100644
+--- a/thinc/neural/tests/unit/test_ops.py
++++ b/thinc/neural/tests/unit/test_ops.py
+@@ -2,7 +2,6 @@ import pytest
+ import numpy
+ from hypothesis import given
+ from numpy.testing import assert_allclose
+-from flexmock import flexmock
+ 
+ from .. import strategies
+ from ...ops import NumpyOps
