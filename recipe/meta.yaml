@@ -1,6 +1,6 @@
 {% set name = "thinc" %}
-{% set version = "6.3.0" %}
-{% set sha256sum = "092809c769ee4f698f82b809f7d5c91b4fc149be639f5050499d5652238be29c" %}
+{% set version = "6.4.0" %}
+{% set sha256sum = "911fb27a4c61daeb4fa3cf27a807b33fac93cfd5fe9db85d471be8c6ff0f6a63" %}
 
 package:
   name: {{ name }}
@@ -46,6 +46,7 @@ requirements:
     - six >=1.10.0,<2.0.0
     - wrapt
     - termcolor
+    - pathlib >=1.0.0,<2.0.0  # [py27]
 
 test:
   requires:
