@@ -1,6 +1,6 @@
 {% set name = "thinc" %}
-{% set version = "6.10.1" %}
-{% set sha256sum = "28d06bc0e6d921cab2dd6197249c3aed15b2563c0e4166a9970d4f409dab1e81" %}
+{% set version = "6.10.2.dev" %}
+{% set sha256sum = "8fdcd42b1d9fe1fec0bf63c731fba998dfd4ea5b9c6bf0447b90107e6e614e54" %}
 
 package:
   name: {{ name }}
