@@ -1,6 +1,7 @@
 {% set name = "thinc" %}
-{% set version = "6.10.0" %}
-{% set sha256sum = "8615dffa31409d2fac85d4806674d914a554aac297f867a03e6dcd84cb6cc99a" %}
+{% set version = "6.10.2" %}
+{% set sha256sum = "9a1deb850285f76efaf0ae38b605a137a3978826282cc57dcc1e66b779402a76" %}
+
 package:
   name: {{ name }}
   version: {{ version }}
@@ -46,7 +47,7 @@ requirements:
     - dill >=0.2.6,<0.3.0
     - termcolor >=1.1.0,<1.2.0
     - pathlib >=1.0.0,<2.0.0  # [py27]
-    - msgpack-numpy >=0.4.1,<0.5.0
+    - msgpack-numpy ==0.4.1
     - msgpack-python >=0.4.8,<0.5.0
 
 test:
