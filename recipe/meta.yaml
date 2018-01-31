@@ -18,6 +18,8 @@ build:
   features:
     - vc9   # [win and py27]
     - vc14  # [win and py>=35]
+  patches:
+    - 0001-Fix-tests-for-numpy-1.14.0.patch
 
 requirements:
   build:
