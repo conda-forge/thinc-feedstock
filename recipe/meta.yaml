@@ -11,7 +11,7 @@ source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256sum }}
   patches:
-    - 0001-Fix-tests-for-numpy-1.14.0.patch
+    - patches/0001-Fix-tests-for-numpy-1.14.0.patch
 
 
 build:
