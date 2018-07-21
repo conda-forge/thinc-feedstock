@@ -50,8 +50,9 @@ requirements:
     - wrapt >=1.10.10,<2.0.0
     - dill >=0.2.6,<0.3.0
     - pathlib ==1.0.1  # [py27]
-    - msgpack >=0.5.6,<1.0.0
     - msgpack-numpy >=0.4.1,<1.0.0
+    # This is correct: The package didn't change name on conda
+    - msgpack-python >=0.5.6,<1.0.0
 
 test:
   requires:
