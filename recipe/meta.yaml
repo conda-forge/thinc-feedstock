@@ -26,7 +26,6 @@ requirements:
   build:
     - toolchain   # [unix]
     - msinttypes  # [win and py27]
-    - llvm  # [win]
     - python
     - setuptools
     # Pin numpy at build time with the minimum version available.
