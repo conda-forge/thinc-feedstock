@@ -1,6 +1,6 @@
 {% set name = "thinc" %}
-{% set version = "6.10.2" %}
-{% set sha256sum = "9a1deb850285f76efaf0ae38b605a137a3978826282cc57dcc1e66b779402a76" %}
+{% set version = "6.10.3" %}
+{% set sha256sum = "6e89d60f6165685837ebaff6a978ea9ca2b6c8c551a0886125c27de42e8fcf04" %}
 
 package:
   name: {{ name }}
@@ -10,8 +10,8 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256sum }}
-  patches:
-    - patches/0001-Fix-tests-for-numpy-1.14.0.patch
+  #patches:
+  #  - patches/0001-Fix-tests-for-numpy-1.14.0.patch
 
 
 build:
@@ -47,10 +47,10 @@ requirements:
     - six >=1.10.0,<2.0.0
     - wrapt >=1.10.10,<2.0.0
     - dill >=0.2.6,<0.3.0
-    - termcolor >=1.1.0,<1.2.0
-    - pathlib >=1.0.0,<2.0.0  # [py27]
-    - msgpack-numpy ==0.4.1
-    - msgpack-python >=0.4.8,<0.5.0
+    - pathlib ==1.0.1  # [py27]
+    - msgpack-numpy >=0.4.1,<1.0.0
+    # This is correct: The package didn't change name on conda
+    - msgpack-python >=0.5.6,<1.0.0
 
 test:
   requires:
