@@ -1,7 +1,6 @@
 {% set name = "thinc" %}
-{% set version = "6.10.2" %}
-{% set sha256sum = "9a1deb850285f76efaf0ae38b605a137a3978826282cc57dcc1e66b779402a76" %}
-
+{% set version = "6.10.3" %}
+{% set sha256sum = "6e89d60f6165685837ebaff6a978ea9ca2b6c8c551a0886125c27de42e8fcf04" %}
 package:
   name: {{ name }}
   version: {{ version }}
@@ -79,3 +78,5 @@ about:
 extra:
   recipe-maintainers:
     - rmax
+    - honnibal
+    - ines
