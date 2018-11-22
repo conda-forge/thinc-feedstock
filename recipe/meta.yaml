@@ -26,19 +26,14 @@ requirements:
   host:
     - pip
     - msinttypes  # [win and py27]
+    - numpy
     - python
     - setuptools
-    # Pin numpy at build time with the minimum version available.
-    - numpy         # [not (win and (py35 or py36))]
-    - numpy         # [win and py35]
-    - numpy         # [win and py36]
+    - wheel >=0.32.0,<0.33.0
 
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - {{ pin_compatible('numpy') }}    # [not (win and (py35 or py36))]
-    - {{ pin_compatible('numpy') }}    # [win and py35]
-    - {{ pin_compatible('numpy') }}   # [win and py36]
     - murmurhash >=0.28,<0.30
     - cymem >=1.30,<1.32
     - preshed >=1.0.0,<2.0.0
