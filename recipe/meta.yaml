@@ -1,6 +1,6 @@
 {% set name = "thinc" %}
-{% set version = "6.10.3" %}
-{% set sha256sum = "6e89d60f6165685837ebaff6a978ea9ca2b6c8c551a0886125c27de42e8fcf04" %}
+{% set version = "6.12.0" %}
+{% set sha256sum = "757ae2d54250e30919aa3171a64c801f28ac74446e8b9fc44a32e7b31170cd51" %}
 package:
   name: {{ name }}
   version: {{ version }}
@@ -14,7 +14,7 @@ source:
 
 
 build:
-  number: 1003
+  number: 1000
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   skip: True  # [not x86_64]
 
@@ -26,32 +26,26 @@ requirements:
   host:
     - pip
     - msinttypes  # [win and py27]
+    - numpy
     - python
     - setuptools
-    # Pin numpy at build time with the minimum version available.
-    - numpy         # [not (win and (py35 or py36))]
-    - numpy         # [win and py35]
-    - numpy         # [win and py36]
+    - wheel >=0.32.0,<0.33.0
 
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - {{ pin_compatible('numpy') }}    # [not (win and (py35 or py36))]
-    - {{ pin_compatible('numpy') }}    # [win and py35]
-    - {{ pin_compatible('numpy') }}   # [win and py36]
-    - murmurhash >=0.28,<0.30
-    - cymem >=1.30,<1.32
-    - preshed >=1.0.0,<2.0.0
+    - murmurhash >=0.28.0,<1.1.0
+    - cymem >=2.0.2,<3.0.0
+    - preshed >=2.0.1,<3.0.0
     - tqdm >=4.10.0,<5.0.0
-    - cytoolz >=0.9,<0.10
+    - cytoolz >=0.9.0,<0.10
     - plac >=0.9.6,<1.0.0
     - six >=1.10.0,<2.0.0
-    - wrapt >=1.10.10,<2.0.0
-    - dill >=0.2.6,<0.3.0
-    - termcolor >=1.1.0,<1.2.0
+    - wrapt >=1.10.0,<1.11.0
+    - dill >=0.2.7,<0.3.0
     - pathlib >=1.0.0,<2.0.0  # [py27]
-    - msgpack-numpy 
-    - msgpack-python >=0.5.0,<0.6.0
+    - msgpack-numpy <0.4.4.0
+    - msgpack-python >=0.5.6,<1.0.0
 
 test:
   requires:
