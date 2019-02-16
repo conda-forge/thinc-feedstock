@@ -1,6 +1,6 @@
 {% set name = "thinc" %}
-{% set version = "6.12.1" %}
-{% set sha256sum = "90c59454efd7b7a54e68bdc129f411bb27661080b9eba2e2b07e68d6c74277ce" %}
+{% set version = "7.0.1" %}
+{% set sha256sum = "02f2ada565e27cb142d9cecb2bb9ce3aa0aa7bfab5b9672d08e0ed0c50b3c2b2" %}
 package:
   name: {{ name }}
   version: {{ version }}
@@ -14,7 +14,7 @@ source:
 
 
 build:
-  number: 1000
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   skip: True  # [not x86_64]
 
