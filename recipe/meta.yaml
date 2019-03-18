@@ -58,7 +58,7 @@ test:
     - thinc.extra
     - thinc.neural
 
-  command:
+  commands:
     - python -m pytest --tb=native --pyargs {{ name }}
 
 about:
