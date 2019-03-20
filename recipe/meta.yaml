@@ -18,19 +18,17 @@ build:
 requirements:
   build:
     - pip
-    - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - pip
-    - msinttypes  # [win and py27]
-    - numpy
+    - numpy 1.15.*
     - python
     - setuptools
     - wheel >=0.32.0,<0.33.0
 
   run:
     - python
-    - {{ pin_compatible('numpy') }}
+    - numpy >=1.15.0
     - murmurhash >=0.28.0,<1.1.0
     - cymem >=2.0.2,<2.1.0
     - preshed >=2.0.1,<2.1.0
