@@ -1,6 +1,6 @@
 {% set name = "thinc" %}
-{% set version = "6.12.1" %}
-{% set sha256sum = "90c59454efd7b7a54e68bdc129f411bb27661080b9eba2e2b07e68d6c74277ce" %}
+{% set version = "7.0.4" %}
+{% set sha256sum = "38a83b928cdc49c994852538f639b2a889681a0589c44b1a6fc3c899e5f36893" %}
 package:
   name: {{ name }}
   version: {{ version }}
@@ -9,24 +9,19 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256sum }}
-  patches:
-    - patches/0001-Fix-tests-for-numpy-1.14.0.patch
-
 
 build:
-  number: 1000
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
-  skip: True  # [not x86_64]
+  skip: true  # [win and py27]
 
 requirements:
   build:
     - pip
-    - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - pip
-    - msinttypes  # [win and py27]
-    - numpy
+    - numpy 1.15.*
     - python
     - setuptools
     - wheel >=0.32.0,<0.33.0
@@ -35,17 +30,14 @@ requirements:
     - python
     - {{ pin_compatible('numpy') }}
     - murmurhash >=0.28.0,<1.1.0
-    - cymem >=2.0.2,<3.0.0
-    - preshed >=2.0.1,<3.0.0
-    - tqdm >=4.10.0,<5.0.0
-    - cytoolz >=0.9.0,<0.10
+    - cymem >=2.0.2,<2.1.0
+    - preshed >=2.0.1,<2.1.0
+    - cython-blis >=0.2.4,<0.3.0
+    - srsly >=0.0.4,<1.1.0
+    - wasabi>=0.0.9,<1.1.0
     - plac >=0.9.6,<1.0.0
-    - six >=1.10.0,<2.0.0
-    - wrapt >=1.10.0,<1.11.0
-    - dill >=0.2.7,<0.3.0
+    - tqdm >=4.10.0,<5.0.0
     - pathlib >=1.0.0,<2.0.0  # [py27]
-    - msgpack-numpy <0.4.4.0
-    - msgpack-python >=0.5.6,<1.0.0
 
 test:
   requires:
@@ -59,6 +51,9 @@ test:
     - thinc.linear
     - thinc.extra
     - thinc.neural
+
+  commands:
+    - python -m pytest --tb=native --pyargs {{ name }}
 
 about:
   home: https://github.com/explosion/thinc/
