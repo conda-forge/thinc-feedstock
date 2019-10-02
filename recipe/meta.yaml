@@ -1,6 +1,6 @@
 {% set name = "thinc" %}
-{% set version = "7.1.0" %}
-{% set sha256sum = "4ad73ac4785c1e66ba7e302371ac9292162758cd45f1ffc218499212fe775648" %}
+{% set version = "7.1.1" %}
+{% set sha256sum = "68478efee64a5523d881d47914a92e315bb31bf0a404cec1ff7be83b0a267f3e" %}
 package:
   name: {{ name }}
   version: {{ version }}
@@ -31,10 +31,10 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - murmurhash >=0.28.0,<1.1.0
     - cymem >=2.0.2,<2.1.0
-    - preshed >=2.0.1,<2.1.0
-    - cython-blis >=0.2.4,<0.3.0
+    - preshed >=3.0.2,<3.1.0
+    - cython-blis >=0.4.0,<0.5.0
     - srsly >=0.0.4,<1.1.0
-    - wasabi>=0.0.9,<1.1.0
+    - wasabi >=0.0.9,<1.1.0
     - plac >=0.9.6,<1.0.0
     - tqdm >=4.10.0,<5.0.0
     - pathlib >=1.0.0,<2.0.0  # [py27]
