@@ -1,18 +1,18 @@
 {% set name = "thinc" %}
 {% set version = "7.3.1" %}
 {% set sha256sum = "ce81d6b2372057e10f9d7cb505942df67a803f270d69959d44d372e8e3792bb9" %}
+
 package:
-  name: {{ name }}
+  name: thinc
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256sum }}
+  url: https://pypi.io/packages/source/t/thinc/thinc-{{ version }}.tar.gz
+  sha256: a9d5006f10571ae7ef2110707c39e760200f2c454c79a4ea603658c997f61248
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   skip: true  # [win and py27]
 
 requirements:
@@ -20,10 +20,9 @@ requirements:
     - pip
     - {{ compiler('cxx') }}
   host:
-    - pip
-    - numpy 1.15.*
     - python
-    - setuptools
+    - pip
+    - numpy 1.16.*
     - wheel >=0.32.0,<0.33.0
 
   run:
@@ -44,7 +43,6 @@ test:
     - hypothesis
     - pytest
     - mock
-
   imports:
     - thinc
     - thinc.api
@@ -53,7 +51,7 @@ test:
     - thinc.neural
 
   commands:
-    - python -m pytest --tb=native --pyargs {{ name }}
+    - python -m pytest --tb=native --pyargs thinc
 
 about:
   home: https://github.com/explosion/thinc/
