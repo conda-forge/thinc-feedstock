@@ -1,4 +1,4 @@
-{% set version = "7.3.0" %}
+{% set version = "7.4.0" %}
 
 package:
   name: thinc
@@ -6,11 +6,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/thinc/thinc-{{ version }}.tar.gz
-  sha256: a9d5006f10571ae7ef2110707c39e760200f2c454c79a4ea603658c997f61248
+  sha256: 523e9be1bfaa3ed1d03d406ce451b6b4793a9719d5b83d2ea6b3398b96bc58b8
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [win and py27]
 
 requirements:
