@@ -39,7 +39,7 @@ requirements:
 
 test:
   requires:
-    - hypothesis <5.5.0
+    - hypothesis <=5.0.0
     - pytest
     - mock
   imports:
