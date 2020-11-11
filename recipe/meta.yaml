@@ -20,7 +20,7 @@ requirements:
   host:
     - python
     - pip
-    - numpy 1.16.*
+    - numpy 1.19.*
     - wheel >=0.32.0
 
   run:
