@@ -7,6 +7,8 @@ package:
 source:
   url: https://pypi.io/packages/source/t/thinc/thinc-{{ version }}.tar.gz
   sha256: 772f1a27b9b31e51003d1d2a7476cc49cc81044dd87088112237f93bd2091f0b
+  patches:
+    - patches/0001-hypothesis-5.patch
 
 build:
   number: 1
@@ -39,7 +41,7 @@ requirements:
 
 test:
   requires:
-    - hypothesis <=5.0.0
+    - hypothesis
     - pytest
     - mock
   imports:
