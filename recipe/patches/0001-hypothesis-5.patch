@@ -1,0 +1,32 @@
+diff --git a/thinc/tests/strategies.py b/thinc/tests/strategies.py
+index 2bef6437..ac0a4b33 100644
+--- a/thinc/tests/strategies.py
++++ b/thinc/tests/strategies.py
+@@ -39,7 +39,7 @@ def shapes(min_rows=1, max_rows=100, min_cols=1, max_cols=100):
+ 
+ 
+ def ndarrays_of_shape(shape, lo=-10.0, hi=10.0, dtype="float32"):
+-    return arrays("float32", shape=shape, elements=floats(min_value=lo, max_value=hi))
++    return arrays("float32", shape=shape, elements=floats(min_value=lo, max_value=hi, width=32))
+ 
+ 
+ def ndarrays(min_len=0, max_len=10, min_val=-10.0, max_val=10.0):
+diff --git a/thinc/tests/unit/test_ops.py b/thinc/tests/unit/test_ops.py
+index 6deb306e..86daae7c 100644
+--- a/thinc/tests/unit/test_ops.py
++++ b/thinc/tests/unit/test_ops.py
+@@ -17,12 +17,12 @@ if CupyOps.xp is not None:
+     OPS_CLASSES.append(CupyOps)
+ 
+ 
+-@pytest.fixture(params=OPS_CLASSES)
++@pytest.fixture(scope="session", params=OPS_CLASSES)
+ def ops(request):
+     return request.param()
+ 
+ 
+-@pytest.fixture
++@pytest.fixture(scope="session")
+ def cpu_ops():
+     return NumpyOps()
+ 
