@@ -17,13 +17,14 @@ build:
 
 requirements:
   build:
-    - pip
     - {{ compiler('cxx') }}
   host:
+    - cython
     - python
     - pip
     - numpy 1.19.*
-    - wheel >=0.32.0
+    - setuptools
+    - wheel
 
   run:
     - python
