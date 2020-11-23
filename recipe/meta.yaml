@@ -1,4 +1,4 @@
-{% set version = "7.4.1" %}
+{% set version = "7.4.3" %}
 
 package:
   name: thinc
@@ -6,12 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/thinc/thinc-{{ version }}.tar.gz
-  sha256: 0139fa84dc9b8d88af15e648fc4ae13d899b8b5e49cb26a8f4a0604ee9ad8a9e
-  patches:
-    - patches/0001-hypothesis-5.patch
+  sha256: c98491b083165f48bda95f5533f7d9dbd3980d32ad621bfe579ff08ef625a4d3
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [win and py27]
 
@@ -22,7 +20,7 @@ requirements:
     - cython
     - python
     - pip
-    - numpy 1.19.*
+    - numpy
     - setuptools
     - wheel
 
