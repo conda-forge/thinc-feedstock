@@ -7,6 +7,7 @@ package:
 source:
   url: https://pypi.io/packages/source/t/thinc/thinc-{{ version }}.tar.gz
   sha256: fc3025baa14fed197c5f12ca71319dd6a0cd262e479c6eafe5e4a0440d8c9e54
+  patches: patches/0001-importorskip-tests.patch
 
 build:
   number: 0
