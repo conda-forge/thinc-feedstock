@@ -47,6 +47,7 @@ test:
     - hypothesis
     - pytest
     - mock
+    - mypy
   imports:
     - thinc
     - thinc.api
