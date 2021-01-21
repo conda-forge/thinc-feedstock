@@ -38,9 +38,9 @@ requirements:
     - srsly >=2.0.0,<3.0.0
     - catalogue >=0.2.0,<3.0.0
     - pydantic >=1.7.1,<1.8.0
-    - dataclasses>=0.6,<1.0  # [py36]
+    - dataclasses >=0.6,<1.0  # [py36]
     - typing_extensions >=3.7.4.1,<4.0.0.0  # [py36 or py37]
-    - contextvars>=2.4,<3  # [py36]
+    - contextvars >=2.4,<3  # [py36]
 
 test:
   requires:
