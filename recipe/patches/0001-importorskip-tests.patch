@@ -57,7 +57,7 @@ index 68df2457..6c9ea675 100644
      n_hidden = 32
      dropout = 0.2
 diff --git a/thinc/tests/mypy/test_mypy.py b/thinc/tests/mypy/test_mypy.py
-index 50103cf9..a27ec30a 100644
+index 50103cf9..28704357 100644
 --- a/thinc/tests/mypy/test_mypy.py
 +++ b/thinc/tests/mypy/test_mypy.py
 @@ -6,8 +6,6 @@ import sys
@@ -69,15 +69,15 @@ index 50103cf9..a27ec30a 100644
  # You can change the following variable to True during development to overwrite expected output with generated output
  GENERATE = False
  
-@@ -21,6 +19,8 @@ cases = [
- 
- @pytest.mark.parametrize("config_filename,python_filename,output_filename", cases)
+@@ -23,6 +21,8 @@ cases = [
  def test_mypy_results(
-+    pytest.importorskip("mypy")
-+    from mypy import api as mypy_api
      config_filename, python_filename, output_filename, tmpdir, monkeypatch
  ):
++    pytest.importorskip("mypy")
++    from mypy import api as mypy_api
      os.chdir(tmpdir)
+     root_dir = Path(__file__).parent
+     thinc_root_dir = Path(__file__).parent.parent.parent.parent
 @@ -80,4 +80,5 @@ def test_generation_is_disabled():
      """
      Makes sure we don't accidentally leave generation on
