@@ -56,6 +56,21 @@ index 68df2457..6c9ea675 100644
      prefer_gpu()
      n_hidden = 32
      dropout = 0.2
+diff --git a/thinc/tests/mypy/test_mypy.py b/thinc/tests/mypy/test_mypy.py
+index 50103cf9..a8a0d055 100644
+--- a/thinc/tests/mypy/test_mypy.py
++++ b/thinc/tests/mypy/test_mypy.py
+@@ -26,8 +26,8 @@ def test_mypy_results(
+     os.chdir(tmpdir)
+     root_dir = Path(__file__).parent
+     thinc_root_dir = Path(__file__).parent.parent.parent.parent
+-    if "--pyargs" not in sys.argv:
+-        monkeypatch.setenv("MYPYPATH", str(thinc_root_dir))
++#    if "--pyargs" not in sys.argv:
++#        monkeypatch.setenv("MYPYPATH", str(thinc_root_dir))
+     tmpdir_path = Path(tmpdir)
+ 
+     full_config_path: Path = root_dir / f"configs/{config_filename}"
 diff --git a/thinc/tests/test_examples.py b/thinc/tests/test_examples.py
 index 699393bc..f7a48c89 100644
 --- a/thinc/tests/test_examples.py
