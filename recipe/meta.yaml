@@ -1,4 +1,4 @@
-{% set version = "7.4.5" %}
+{% set version = "8.0.0" %}
 
 package:
   name: thinc
@@ -6,7 +6,8 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/thinc/thinc-{{ version }}.tar.gz
-  sha256: 5743fde41706252ec6ce4737c68d3505f7e1cc3d4431174a17149838d594f8cb
+  sha256: fc3025baa14fed197c5f12ca71319dd6a0cd262e479c6eafe5e4a0440d8c9e54
+  patches: patches/0001-importorskip-tests.patch
 
 build:
   number: 0
@@ -23,7 +24,10 @@ requirements:
     - numpy
     - setuptools
     - wheel
-
+    - cymem >=2.0.2,<2.1.0
+    - preshed >=3.0.2,<3.1.0
+    - murmurhash >=0.28.0,<1.1.0 
+    - cython-blis >=0.4.0,<0.8.0
   run:
     - python
     - {{ pin_compatible('numpy') }}
@@ -31,12 +35,13 @@ requirements:
     - cymem >=2.0.2,<2.1.0
     - preshed >=3.0.2,<3.1.0
     - cython-blis >=0.4.0,<0.8.0
-    - srsly >=0.0.6,<1.1.0
-    - wasabi >=0.0.9,<1.1.0
-    - plac >=0.9.6,<1.2.0
-    - tqdm >=4.10.0,<5.0.0
-    - catalogue >=0.0.7,<1.1.0
-    - pathlib >=1.0.0,<2.0.0  # [py27]
+    - wasabi >=0.4.0,<1.1.0
+    - srsly >=2.0.0,<3.0.0
+    - catalogue >=0.2.0,<3.0.0
+    - pydantic >=1.7.1,<1.8.0
+    - dataclasses >=0.6,<1.0  # [py36]
+    - typing_extensions >=3.7.4.1,<4.0.0.0  # [py36 or py37]
+    - contextvars >=2.4,<3  # [py36]
 
 test:
   requires:
