@@ -1,4 +1,4 @@
-{% set version = "8.0.0" %}
+{% set version = "8.0.1" %}
 
 package:
   name: thinc
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/thinc/thinc-{{ version }}.tar.gz
-  sha256: fc3025baa14fed197c5f12ca71319dd6a0cd262e479c6eafe5e4a0440d8c9e54
+  sha256: 88755ccd076184f29ebc29a484347830fd52a29ece58aa611faec8a578a45810
   patches: patches/0001-importorskip-tests.patch
 
 build:
@@ -26,7 +26,7 @@ requirements:
     - wheel
     - cymem >=2.0.2,<2.1.0
     - preshed >=3.0.2,<3.1.0
-    - murmurhash >=0.28.0,<1.1.0 
+    - murmurhash >=0.28.0,<1.1.0
     - cython-blis >=0.4.0,<0.8.0
   run:
     - python
