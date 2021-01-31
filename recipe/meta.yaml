@@ -9,7 +9,7 @@ source:
   sha256: 5743fde41706252ec6ce4737c68d3505f7e1cc3d4431174a17149838d594f8cb
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [win and py27]
 
@@ -23,6 +23,10 @@ requirements:
     - numpy
     - setuptools
     - wheel
+    - murmurhash >=0.28.0,<1.1.0
+    - cymem >=2.0.2,<2.1.0
+    - preshed >=3.0.2,<3.1.0
+    - cython-blis >=0.4.0,<0.8.0
 
   run:
     - python
