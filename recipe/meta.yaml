@@ -50,6 +50,7 @@ requirements:
 test:
   requires:
     - hypothesis
+    - importlib-metadata <3.3.0  # [py36 or py37]
     - pytest
     - mock
     - pathy >=0.3.5
