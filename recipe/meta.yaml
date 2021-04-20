@@ -1,4 +1,4 @@
-{% set version = "8.0.2" %}
+{% set version = "8.0.3" %}
 
 package:
   name: thinc
@@ -6,11 +6,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/thinc/thinc-{{ version }}.tar.gz
-  sha256: 20f033b3d9fbd02389d8f828cebcd3a42aee3e17ed4c2d56c6d5163af83a9cee
+  sha256: c370a7a46d01b588d8d5f99d8d5e36b3cbac4512638356fa430f7f52bb3a8897
   patches: patches/0001-importorskip-tests.patch
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [win and py27]
 
@@ -41,7 +41,7 @@ requirements:
     - cython-blis >=0.4.0,<0.8.0
     - wasabi >=0.4.0,<1.1.0
     - srsly >=2.0.0,<3.0.0
-    - catalogue >=0.2.0,<3.0.0
+    - catalogue >=2.0.3,<3.0.0
     - pydantic >=1.7.1,<1.8.0
     - dataclasses >=0.6,<1.0  # [py36]
     - typing_extensions >=3.7.4.1,<4.0.0.0  # [py36 or py37]
@@ -50,6 +50,7 @@ requirements:
 test:
   requires:
     - hypothesis
+    - importlib-metadata ==3.3.0  # [py<38]
     - pytest
     - mock
     - pathy >=0.3.5
