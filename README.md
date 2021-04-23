@@ -7,12 +7,10 @@ Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/thinc-feedstock/blob/master/LICENSE.txt)
 
-Summary: thinc: Learn super-sparse multi-class models
+Summary: thinc: a lightweight deep learning library
 
-thinc is a Cython library for learning models with millions of parameters
-and dozens of classes. It drives https://spacy.io , a pipeline of very
-efficient NLP components. I’ve only used thinc from Cython; no real Python
-API is currently available.
+A refreshing functional take on deep learning, compatible with your
+favorite libraries
 
 
 Current build status
