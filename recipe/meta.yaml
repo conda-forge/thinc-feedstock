@@ -21,7 +21,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('cxx') }}
   host:
-    - cython
+    - cython <3.0
     - python
     - pip
     - numpy
@@ -40,8 +40,8 @@ requirements:
     - cython-blis >=0.4.0,<0.8.0
     - wasabi >=0.4.0,<1.1.0
     - srsly >=2.0.0,<3.0.0
-    - catalogue >=2.0.3,<3.0.0
-    - pydantic >=1.7.1,<1.8.0
+    - catalogue >=2.0.4,<3.0.0
+    - pydantic >=1.7.4,!=1.8,!=1.8.1,<1.9.0
     - dataclasses >=0.6,<1.0  # [py36]
     - typing_extensions >=3.7.4.1,<4.0.0.0  # [py36 or py37]
     - contextvars >=2.4,<3  # [py36]
