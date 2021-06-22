@@ -1,4 +1,4 @@
-{% set version = "8.0.4" %}
+{% set version = "8.0.5" %}
 
 package:
   name: thinc
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/thinc/thinc-{{ version }}.tar.gz
-  sha256: 32016a5be62a2c4b5f86954ae30f8da78bacaa5966ea3ce56886cf9d7c7dcbe6
+  sha256: f23ace11ba990bb03c8f9667f1f8fb387d1ef9d41e803542e54c5bb209274cc4
 
 build:
   number: 0
@@ -38,8 +38,8 @@ requirements:
     - cymem >=2.0.2,<2.1.0
     - preshed >=3.0.2,<3.1.0
     - cython-blis >=0.4.0,<0.8.0
-    - wasabi >=0.4.0,<1.1.0
-    - srsly >=2.0.0,<3.0.0
+    - wasabi >=0.8.1,<1.1.0
+    - srsly >=2.4.0,<3.0.0
     - catalogue >=2.0.4,<3.0.0
     - pydantic >=1.7.4,!=1.8,!=1.8.1,<1.9.0
     - dataclasses >=0.6,<1.0  # [py36]
@@ -49,7 +49,6 @@ requirements:
 test:
   requires:
     - hypothesis
-    - importlib-metadata ==3.3.0  # [py<38]
     - pytest
     - mock
     - pathy >=0.3.5
