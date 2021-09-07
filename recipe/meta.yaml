@@ -52,6 +52,7 @@ test:
     - pytest
     - mock
     - pathy >=0.3.5
+    - importlib_resources  # [py36]
   imports:
     - thinc
     - thinc.api
