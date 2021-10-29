@@ -1,4 +1,4 @@
-{% set version = "8.0.11" %}
+{% set version = "8.0.12" %}
 
 package:
   name: thinc
@@ -6,12 +6,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/thinc/thinc-{{ version }}.tar.gz
-  sha256: 95e766804d9228b90a58659fdb5610d0bc3eb66c28142dea69ac844c6953906a
+  sha256: 527c220b6a8f531521b49dc064aa645dc590c6bbc6234849fbee1abdb2378ebe
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  skip: true  # [win and py27]
 
 requirements:
   build:
@@ -42,9 +41,7 @@ requirements:
     - srsly >=2.4.0,<3.0.0
     - catalogue >=2.0.4,<3.0.0
     - pydantic >=1.7.4,!=1.8,!=1.8.1,<1.9.0
-    - dataclasses >=0.6,<1.0  # [py36]
-    - typing_extensions >=3.7.4.1,<4.0.0.0  # [py36 or py37]
-    - contextvars >=2.4,<3  # [py36]
+    - typing_extensions >=3.7.4.1,<4.0.0.0  # [py<=37]
 
 test:
   requires:
@@ -52,7 +49,6 @@ test:
     - pytest
     - mock
     - pathy >=0.3.5
-    - importlib_resources  # [py36]
   imports:
     - thinc
     - thinc.api
