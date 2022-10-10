@@ -41,7 +41,7 @@ requirements:
     - srsly >=2.4.0,<3.0.0
     - catalogue >=2.0.4,<3.0.0
     - confection >=0.0.1,<1.0.0
-    - pydantic >=1.7.4,!=1.8,!=1.8.1,<1.10.0
+    - pydantic >=1.7.4,!=1.8,!=1.8.1,<1.11.0
     - typing_extensions >=3.7.4.1,<4.2.0  # [py<=37]
 
 test:
