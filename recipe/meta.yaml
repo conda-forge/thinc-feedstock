@@ -1,4 +1,4 @@
-{% set version = "8.1.6" %}
+{% set version = "8.1.7" %}
 
 package:
   name: thinc
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/thinc/thinc-{{ version }}.tar.gz
-  sha256: 9241c37761f004fe684e637d2b4d8b79addebabc64e343aa1cba144fad2c9b47
+  sha256: 0f08f6d1fc50e28bf18814ca2b1c807cd4d59a930d713459a675e086c4779af9
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -37,12 +37,12 @@ requirements:
     - cymem >=2.0.2,<2.1.0
     - preshed >=3.0.2,<3.1.0
     - cython-blis >=0.7.8,<0.8.0
-    - wasabi >=0.8.1,<1.1.0
+    - wasabi >=0.8.1,<1.2.0
     - srsly >=2.4.0,<3.0.0
     - catalogue >=2.0.4,<3.0.0
     - confection >=0.0.1,<1.0.0
     - pydantic >=1.7.4,!=1.8,!=1.8.1,<1.11.0
-    - typing_extensions >=3.7.4.1,<4.2.0  # [py<=37]
+    - typing_extensions >=3.7.4.1,<4.5.0  # [py<=37]
 
 test:
   requires:
