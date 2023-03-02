@@ -1,11 +1,11 @@
-About thinc
-===========
+About thinc-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/thinc-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/explosion/thinc/
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/thinc-feedstock/blob/main/LICENSE.txt)
 
 Summary: thinc: a lightweight deep learning library
 
