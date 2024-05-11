@@ -53,7 +53,6 @@ test:
   imports:
     - thinc
     - thinc.api
-    - thinc.extra
 
   commands:
     - python -m pytest --tb=native --pyargs thinc  # [not ppc64le]
