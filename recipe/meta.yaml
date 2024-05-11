@@ -55,7 +55,6 @@ test:
   imports:
     - thinc
     - thinc.api
-    - thinc.extra
 
   commands:
     {% set tests_to_skip = "_not_a_real_test" %}
