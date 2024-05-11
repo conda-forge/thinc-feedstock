@@ -54,9 +54,7 @@ test:
   imports:
     - thinc
     - thinc.api
-    - thinc.linear
     - thinc.extra
-    - thinc.neural
 
   commands:
     {% set tests_to_skip = "_not_a_real_test" %}
