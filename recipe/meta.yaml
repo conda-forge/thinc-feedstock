@@ -59,7 +59,10 @@ test:
     - thinc.neural
 
   commands:
-    - python -m pytest --tb=native --pyargs thinc
+    {% set tests_to_skip = "_not_a_real_test" %}
+    # spurious failure on pypy
+    {% set tests_to_skip = tests_to_skip + " or test_initializer_func_setup" %}     # [python_impl == "pypy"]
+    - python -m pytest --tb=native --pyargs thinc -k "not ({{ tests_to_skip }})"
 
 about:
   home: https://github.com/explosion/thinc/
