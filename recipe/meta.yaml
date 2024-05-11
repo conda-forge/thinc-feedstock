@@ -1,4 +1,4 @@
-{% set version = "8.2.3" %}
+{% set version = "9.0.0" %}
 
 package:
   name: thinc
@@ -6,11 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/thinc/thinc-{{ version }}.tar.gz
-  sha256: f5afc5222912a80bda8bdcec958362a2ba538d7027dc8db6154845d2859dca76
+  sha256: bbe7fc3dca4f2b89a2c1429e8bf1c9dc20b0faad13f0ac29053bbb3c2531ad57
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
+  skip: true  # [py<39]
 
 requirements:
   build:
@@ -54,7 +55,6 @@ test:
   imports:
     - thinc
     - thinc.api
-    - thinc.extra
 
   commands:
     {% set tests_to_skip = "_not_a_real_test" %}
