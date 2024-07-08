@@ -1,4 +1,4 @@
-{% set version = "8.2.3" %}
+{% set version = "8.2.5" %}
 
 package:
   name: thinc
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/thinc/thinc-{{ version }}.tar.gz
-  sha256: f5afc5222912a80bda8bdcec958362a2ba538d7027dc8db6154845d2859dca76
+  sha256: c2963791c934cc7fbd8f9b942d571cac79892ad11630bfca690a868c32752b75
 
 build:
   number: 0
@@ -40,10 +40,11 @@ requirements:
     - cython-blis >=0.7.8,<0.8.0
     - wasabi >=0.8.1,<1.2.0
     - srsly >=2.4.0,<3.0.0
-    - catalogue >=2.0.4,<3.0.0
+    - catalogue >=2.0.4,<2.1.0
     - confection >=0.0.1,<1.0.0
     - pydantic >=1.7.4,!=1.8,!=1.8.1,<3.0.0
     - packaging >=20.0
+    - typing_extensions >=3.7.4.1,<5.0.0
 
 test:
   requires:
