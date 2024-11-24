@@ -1,4 +1,4 @@
-{% set version = "8.3.2" %}
+{% set version = "9.1.1" %}
 
 package:
   name: thinc
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/t/thinc/thinc-{{ version }}.tar.gz
-  sha256: 3e8ef69eac89a601e11d47fc9e43d26ffe7ef682dcf667c94ff35ff690549aeb
+  sha256: 21fae2986d7777a6f050b9046dc9eab11852f1c9a997dcc9032f3ecc22784a4a
 
 build:
   number: 0
@@ -47,13 +47,12 @@ requirements:
 test:
   requires:
     - hypothesis
-    - pytest <8
+    - pytest
     - mock
     - pathy >=0.3.5
   imports:
     - thinc
     - thinc.api
-    - thinc.extra
 
   commands:
     - python -m pytest --tb=native --pyargs thinc  # [not ppc64le]
