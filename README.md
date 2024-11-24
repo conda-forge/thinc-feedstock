@@ -328,6 +328,7 @@ Feedstock Maintainers
 =====================
 
 * [@adrianeboyd](https://github.com/adrianeboyd/)
+* [@h-vetinari](https://github.com/h-vetinari/)
 * [@honnibal](https://github.com/honnibal/)
 * [@ines](https://github.com/ines/)
 * [@rmax](https://github.com/rmax/)
