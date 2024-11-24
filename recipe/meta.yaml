@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/t/thinc/thinc-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/t/thinc/thinc-{{ version }}.tar.gz
   sha256: 3e8ef69eac89a601e11d47fc9e43d26ffe7ef682dcf667c94ff35ff690549aeb
 
 build:
