@@ -7,9 +7,11 @@ package:
 source:
   url: https://pypi.org/packages/source/t/thinc/thinc-{{ version }}.tar.gz
   sha256: 21fae2986d7777a6f050b9046dc9eab11852f1c9a997dcc9032f3ecc22784a4a
+  patches:
+    - patches/0001-fix-numpy-metadata.patch
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -46,6 +48,7 @@ requirements:
 
 test:
   requires:
+    - pip
     - hypothesis
     - pytest
     - mock
@@ -53,9 +56,9 @@ test:
   imports:
     - thinc
     - thinc.api
-
   commands:
     - python -m pytest --tb=native --pyargs thinc  # [not ppc64le]
+    - pip check
 
 about:
   home: https://github.com/explosion/thinc/
