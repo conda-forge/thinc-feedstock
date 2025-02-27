@@ -9,6 +9,8 @@ source:
   sha256: 4e6ec04792417026f0c83c4421e5e49f52efd1202396503cf53a4af24fe26328
   patches:
     - patches/0001-fix-numpy-metadata.patch
+    # backport https://github.com/explosion/thinc/pull/951
+    - patches/0002-Support-Cython-3-and-also-Python-3.13.patch
 
 build:
   number: 2
