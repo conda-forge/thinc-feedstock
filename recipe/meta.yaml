@@ -1,4 +1,4 @@
-{% set version = "9.1.1" %}
+{% set version = "8.3.8" %}
 
 package:
   name: thinc
@@ -6,24 +6,24 @@ package:
 
 source:
   url: https://github.com/explosion/thinc/archive/refs/tags/release-v{{ version }}.tar.gz
-  sha256: 4e6ec04792417026f0c83c4421e5e49f52efd1202396503cf53a4af24fe26328
-  patches:
-    - patches/0001-fix-numpy-metadata.patch
+  sha256: aa18ff8b65e62f1607a44505e5f45df83cbe7148d5e6987b5a4cc0db154947d8
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
+  # missing cython-blis for ppc
+  skip: true  # [ppc64le]
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython <3.0                            # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
   host:
-    - cython <3.0
+    - cython
     - python
     - pip
     - numpy
@@ -32,18 +32,18 @@ requirements:
     - cymem >=2.0.2,<2.1.0
     - preshed >=3.0.2,<3.1.0
     - murmurhash >=1.0.2,<1.1.0
-    - cython-blis >=1.0.0,<1.1.0
+    - cython-blis >=1.3.0,<1.4.0
   run:
     - python
     - murmurhash >=1.0.2,<1.1.0
     - cymem >=2.0.2,<2.1.0
     - preshed >=3.0.2,<3.1.0
-    - cython-blis >=1.0.0,<1.1.0
+    - cython-blis >=1.3.0,<1.4.0
     - wasabi >=0.8.1,<1.2.0
     - srsly >=2.4.0,<3.0.0
     - catalogue >=2.0.4,<2.1.0
     - confection >=0.0.1,<1.0.0
-    - pydantic >=1.7.4,!=1.8,!=1.8.1,<3.0.0
+    - pydantic >=2.0.0,<3.0.0
     - packaging >=20.0
 
 test:
@@ -56,6 +56,7 @@ test:
   imports:
     - thinc
     - thinc.api
+    - thinc.extra
   commands:
     - python -m pytest --tb=native --pyargs thinc  # [not ppc64le]
     - pip check
