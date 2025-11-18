@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/explosion/thinc/archive/refs/tags/release-v{{ version }}.tar.gz
-  sha256: a00bda30085b72451151835e3415b6b5d071ea74c2ab68dfa8c55f1a0edf2b53
+  sha256: 9678bffe5134e6558f296232f324409c961ebe0993c2e1c71550845b22dae465
 
 build:
   number: 0
