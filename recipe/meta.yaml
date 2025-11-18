@@ -1,4 +1,4 @@
-{% set version = "8.3.9" %}
+{% set version = "8.3.10" %}
 
 package:
   name: thinc
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/explosion/thinc/archive/refs/tags/release-v{{ version }}.tar.gz
-  sha256: 33bd7441b05657f4d61950637b3c78535e62bf9bb8a7c71a39fd5eda1d6a6834
+  sha256: a00bda30085b72451151835e3415b6b5d071ea74c2ab68dfa8c55f1a0edf2b53
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   # missing cython-blis for ppc
   skip: true  # [ppc64le]
